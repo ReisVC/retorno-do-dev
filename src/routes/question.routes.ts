@@ -9,6 +9,7 @@ const controller = new QuestionController()
 
 questionRouter.get('/:id', controller.getById.bind(controller));
 questionRouter.get('/', controller.list.bind(controller));
+questionRouter.post('/validate', controller.validateQuestion.bind(controller));
 // LIST: normalmente só admin podem listar todos os usuários
 // router.get('/', controller.list.bind(controller));
 

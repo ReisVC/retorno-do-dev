@@ -7,6 +7,7 @@ export class SeedInitialQuestion1690000000000 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         // Inserindo a pergunta
 
+        // Lista de perguntas que serão inseridas quando rodar o código
         const questions = [
             {
                 question: 'Quem é a criatura que guia Frodo e Sam para Mordor',
@@ -24,6 +25,51 @@ export class SeedInitialQuestion1690000000000 implements MigrationInterface {
                     { answer: 'Glamdring', correct: false },
                     { answer: 'Sting', correct: false },
                     { answer: 'Orcrist', correct: false }
+                ]
+            },
+            {
+                question: 'Qual é o verdadeiro nome de Gollum?',
+                answers: [
+                    { answer: 'Gríma', correct: false },
+                    { answer: 'Sméagol', correct: true },
+                    { answer: 'Déagol', correct: false },
+                    { answer: 'Saruman', correct: false }
+                ]
+            },
+            {
+                question: 'Quem forjou o Um Anel?',
+                answers: [
+                    { answer: 'Celebrimbor', correct: false },
+                    { answer: 'Gandalf', correct: false },
+                    { answer: 'Sauron', correct: true },
+                    { answer: 'Elrond', correct: false }
+                ]
+            },
+            {
+                question: 'Quantos membros formam a Sociedade do Anel?',
+                answers: [
+                    { answer: '7', correct: false },
+                    { answer: '9', correct: true },
+                    { answer: '5', correct: false },
+                    { answer: '10', correct: false }
+                ]
+            },
+            {
+                question: 'Qual é o nome da espada reforjada para Aragorn?',
+                answers: [
+                    { answer: 'Narsil', correct: false },
+                    { answer: 'Sting', correct: false },
+                    { answer: 'Andúril', correct: true },
+                    { answer: 'Glamdring', correct: false }
+                ]
+            },
+            {
+                question: 'Qual o nome da montanha onde o Um Anel deve ser destruído?',
+                answers: [
+                    { answer: 'Montanha Solitária', correct: false },
+                    { answer: 'Monte Neblina', correct: false },
+                    { answer: 'Montanha da Perdição', correct: true },
+                    { answer: 'Monte Fogo', correct: false }
                 ]
             }
         ];

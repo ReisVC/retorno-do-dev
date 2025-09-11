@@ -5,7 +5,7 @@ import { QuestionService } from '../services/QuestionService'
 const service = new QuestionService()
 
 export class QuestionController {
-    
+
     // async create(req: Request, res: Response) {
     //     try {
     //         const user = await service.create(req.body)
@@ -28,7 +28,7 @@ export class QuestionController {
     async getById(req: Request, res: Response) {
         try {
             const { id } = req.params;
-             // const user = await service.findById(Number(req.params.id));
+            // const user = await service.findById(Number(req.params.id));
             const question = await service.findById(Number(id))
             res.json(question)
         } catch (e: any) {
@@ -44,6 +44,16 @@ export class QuestionController {
     //         res.status(400).json({ message: e.message })
     //     }
     // }
+
+    async validateQuestion(req: Request, res: Response) {
+        try {
+            const result = await service.validateQuestion(req.body);
+            res.json(result);
+        }
+        catch (e: any) {
+            res.status(404).json({ message: e.getMessage() })
+        }
+    }
 
     // async remove(req: Request, res: Response) {
     //     try {
