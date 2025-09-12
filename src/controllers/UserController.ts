@@ -24,15 +24,15 @@ export class UserController {
     //     }
     // }
 
-    // async getById(req: Request, res: Response) {
-    //     try {
-    //         // const user = await service.findById(Number(req.params.id));
-    //         const user = await service.findById((req as any).user.id)
-    //         res.json(user)
-    //     } catch (e: any) {
-    //         res.status(404).json({ message: e.message })
-    //     }
-    // }
+    async getById(req: Request, res: Response) {
+        try {
+            // const user = await service.findById(Number(req.params.id));
+            const user = await service.findById((req as any).user.id)
+            res.json(user)
+        } catch (e: any) {
+            res.status(404).json({ message: e.message })
+        }
+    }
 
     // async update(req: Request, res: Response) {
     //     try {
@@ -51,4 +51,13 @@ export class UserController {
     //         res.status(404).json({ message: e.message })
     //     }
     // }
+
+    async score(req: Request, res: Response) {
+        try {
+            const user = await service.changeScore((req as any).user.id, req.body);
+            return res.json(user);
+        } catch (e: any) {
+            res.status(400).json({ message: e.message })
+        }
+    }
 }

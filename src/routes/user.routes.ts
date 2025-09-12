@@ -11,7 +11,7 @@ const controller = new UserController()
 
 // // PROFILE do usuário logado
 // // Lê as infos
-// router.get('/me', authMiddleware,controller.getById.bind(controller))
+router.get('/me', authMiddleware,controller.getById.bind(controller))
 // // Atualiza as infos
 // router.put('/me', authMiddleware, controller.update.bind(controller))
 // // Remove
@@ -19,5 +19,6 @@ const controller = new UserController()
 
 // CREATE: permite cadastro de novo usuário (não precisa estar logado)
 router.post('/', controller.create.bind(controller))
+router.put('/me/score', authMiddleware, controller.score.bind(controller))
 
 export default router

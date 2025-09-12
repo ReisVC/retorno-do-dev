@@ -30,17 +30,17 @@ export class UserService {
 
     // }
 
-    // async findById(id: number) {
-    //     const user = await this.userRepository.findOne({ where: { id } })
+    async findById(id: number) {
+        const user = await this.userRepository.findOne({ where: { id } })
 
-    //     if (!user) throw new Error('Usuário não encontrado')
+        if (!user) throw new Error('Usuário não encontrado')
 
-    //     const clone: any = { ...user }
+        const clone: any = { ...user }
 
-    //     delete clone.password
+        delete clone.password
 
-    //     return clone
-    // }
+        return clone
+    }
 
     // async update(id: number, data: Partial<User>) {
     //     const user = await this.userRepository.findOne({ where: { id } })
@@ -68,7 +68,13 @@ export class UserService {
     //     return { message: 'Usuário removido' }
     // }
 
-    // async findByEmail(email: string) {
-    //     return this.userRepository.findOne({ where: { email } })
-    // }
+    async findByEmail(email: string) {
+        return this.userRepository.findOne({ where: { email } })
+    }
+
+    async changeScore(id: number, data: { score: number }) {
+        const user = await this.userRepository.findOne({ where: { id } })
+
+        return await this.userRepository.save({ ...user, score: user!.score + data.score });
+    }
 }
