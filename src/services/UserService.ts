@@ -17,58 +17,63 @@ export class UserService {
         return clone
     }
 
-    // async findAll() {
-    //     const users = await this.userRepository.find()
+    async findByEmail(email: string) {
+        return this.userRepository.findOne({ where: { email } })
+    }
 
-    //     return users.map(u => {
-    //         const clone: any = { ...u }
+    async findAll() {
+        const users = await this.userRepository.find()
 
-    //         delete clone.password
+        return users;
+    }
 
-    //         return clone
-    //     })
+    async removeById(id: number) {
+        const user = await this.userRepository.findOne({ where: { id } })
 
-    // }
+        if (!user) throw new Error('Usuário não encontrado')
 
-    // async findById(id: number) {
-    //     const user = await this.userRepository.findOne({ where: { id } })
+        await this.userRepository.remove(user)
 
-    //     if (!user) throw new Error('Usuário não encontrado')
+        return { message: 'Usuário removido' }
 
-    //     const clone: any = { ...user }
+    }
 
-    //     delete clone.password
+    async findById(id: number) {
+        const user = await this.userRepository.findOne({ where: { id } })
 
-    //     return clone
-    // }
+        if (!user) throw new Error('Jogador não encontrado')
 
-    // async update(id: number, data: Partial<User>) {
-    //     const user = await this.userRepository.findOne({ where: { id } })
+        const clone: any = { ...user }
 
-    //     if (!user) throw new Error('Usuário não encontrado')
-
-    //     if (data.password) {
-    //         user.password = data.password
-    //     }
-
-    //     const { password, ...rest } = data
-    //     Object.assign(user, rest)
-
-    //     return await this.userRepository.save(user)
-    // }
+        delete clone.password
 
 
-    // async remove(id: number) {
-    //     const user = await this.userRepository.findOne({ where: { id } })
+        return clone
+    }
 
-    //     if (!user) throw new Error('Usuário não encontrado')
+    async update(id: number, data: Partial<User>) {
+        const user = await this.userRepository.findOne({ where: { id } })
 
-    //     await this.userRepository.remove(user)
+        if (!user) throw new Error('Jogador não encontrado')
 
-    //     return { message: 'Usuário removido' }
-    // }
+        if (data.password) {
+            user.password = data.password
+        }
 
-    // async findByEmail(email: string) {
-    //     return this.userRepository.findOne({ where: { email } })
-    // }
+        const { password, ...rest } = data
+        Object.assign(user, rest)
+
+        return await this.userRepository.save(user)
+    }
+
+
+    async remove(id: number) {
+        const user = await this.userRepository.findOne({ where: { id } })
+
+        if (!user) throw new Error('Usuário não encontrado')
+
+        await this.userRepository.remove(user)
+
+        return { message: 'Usuário removido' }
+    }
 }
