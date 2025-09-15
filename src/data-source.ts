@@ -4,6 +4,7 @@ import { config } from 'dotenv'
 import { User } from './models/User'
 import { Question } from './models/Question'
 import { Answer } from './models/Answer'
+import { Achievement } from './models/Achievement'
 
 config() // carrega variáveis do .env
 
@@ -14,7 +15,7 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  entities: [User, Question, Answer],
+  entities: [User, Question, Answer, Achievement],
   migrations: ['src/migrations/*.ts'],
   synchronize: true, // cria tabelas automaticamente (apenas dev!)
   logging: true

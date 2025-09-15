@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, BeforeUpdate, CreateDateColumn, UpdateDateColumn } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, BeforeUpdate, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm'
 import bcrypt from 'bcrypt'
+import { Achievement } from './Achievement'
 
 @Entity('users')
 export class User {
@@ -23,6 +24,9 @@ export class User {
 
     @Column({ type: 'int', default: 0 })
     score: number;
+
+    @OneToMany(() => Achievement, (achievement) => achievement.user)
+    achievements: Achievement[];
 
     // Antes de salvar ou atualizar, criptografa a senha
     @BeforeInsert()
