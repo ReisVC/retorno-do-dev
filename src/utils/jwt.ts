@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken'
 interface Payload {
   id: number
   email: string
+  score: number
 }
 
 // payload são as informações que enviamos do nosso usuário

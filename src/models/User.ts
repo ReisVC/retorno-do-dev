@@ -21,6 +21,9 @@ export class User {
     @UpdateDateColumn()
     updatedAt: Date
 
+    @Column({ type: 'int', default: 0 })
+    score: number;
+
     // Antes de salvar ou atualizar, criptografa a senha
     @BeforeInsert()
     @BeforeUpdate()

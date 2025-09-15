@@ -41,12 +41,11 @@ export class UserService {
     async findById(id: number) {
         const user = await this.userRepository.findOne({ where: { id } })
 
-        if (!user) throw new Error('Jogador não encontrado')
+    //     if (!user) throw new Error('Usuário não encontrado')
 
         const clone: any = { ...user }
 
-        delete clone.password
-
+    //     delete clone.password
 
         return clone
     }
@@ -74,6 +73,10 @@ export class UserService {
 
         await this.userRepository.remove(user)
 
-        return { message: 'Usuário removido' }
-    }
+    //     return { message: 'Usuário removido' }
+    // }
+
+    // async findByEmail(email: string) {
+    //     return this.userRepository.findOne({ where: { email } })
+    // }
 }
