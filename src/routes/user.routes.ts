@@ -10,8 +10,6 @@ router.delete('/me', authMiddleware,controller.removeById.bind(controller));
 
 router.get('/me', authMiddleware, controller.getById.bind(controller))
 
-// router.post('/create', controller.create.bind(controller))
-
 router.get('/', controller.findAll.bind(controller))
 
 router.get('/ranking', controller.ranking.bind(controller))

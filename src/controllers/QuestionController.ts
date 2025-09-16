@@ -6,15 +6,7 @@ const service = new QuestionService()
 
 export class QuestionController {
 
-    // async create(req: Request, res: Response) {
-    //     try {
-    //         const user = await service.create(req.body)
-    //         res.status(201).json(user)
-    //     } catch (e: any) {
-    //         res.status(400).json({ message: e.message })
-    //     }
-    // }
-
+    // Método para buscar todas as perguntas e respostas
     async list(req: Request, res: Response) {
         try {
             const users = await service.findAll()
@@ -25,10 +17,12 @@ export class QuestionController {
         }
     }
 
+    // Método para buscar uma pergunta pelo ID
     async getById(req: Request, res: Response) {
         try {
+            // Pega o ID dos parâmetros da requisição
             const { id } = req.params;
-            // const user = await service.findById(Number(req.params.id));
+            // Chama o serviço para buscar a pergunta pelo ID
             const question = await service.findById(Number(id))
             res.json(question)
         } catch (e: any) {
@@ -36,17 +30,10 @@ export class QuestionController {
         }
     }
 
-    // async update(req: Request, res: Response) {
-    //     try {
-    //         const user = await service.update((req as any).user.id, req.body)
-    //         res.json(user)
-    //     } catch (e: any) {
-    //         res.status(400).json({ message: e.message })
-    //     }
-    // }
-
+    // Método para validar se a resposta está correta
     async validateQuestion(req: Request, res: Response) {
         try {
+            // Chama o serviço para validar se a resposta está correta
             const result = await service.validateQuestion(req.body);
             res.json(result);
         }
@@ -54,13 +41,4 @@ export class QuestionController {
             res.status(404).json({ message: e.getMessage() })
         }
     }
-
-    // async remove(req: Request, res: Response) {
-    //     try {
-    //         const result = await service.remove((req as any).user.id)
-    //         res.json(result)
-    //     } catch (e: any) {
-    //         res.status(404).json({ message: e.message })
-    //     }
-    // }
 }
