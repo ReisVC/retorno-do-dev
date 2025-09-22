@@ -16,8 +16,8 @@ export class AuthController {
 
   async login(req: Request, res: Response) {
     try {
-      const { email, password } = req.body
-      const user = await service.findByEmail(email)
+      const { name, password } = req.body
+      const user = await service.findByName(name)
       if (!user) return res.status(404).json({ message: 'Usuário não encontrado' })
   
       const valid = await user.validatePassword(password)

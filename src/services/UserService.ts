@@ -32,6 +32,10 @@ export class UserService {
         return this.userRepository.findOne({ where: { email } })
     }
 
+    async findByName(name: string) {
+        return this.userRepository.findOne({ where: { name } })
+    }
+
     // Método para buscar todos os usuários
     async findAll() {
         const users = await this.userRepository.find()
