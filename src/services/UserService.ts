@@ -107,7 +107,7 @@ export class UserService {
     // Método para retornar o ranking dos 10 usuários com maior pontuação
     async ranking() {
         // Busca os 10 usuários com maior pontuação, retornando apenas id, name e score
-        const users = await this.userRepository.find({ select: { id: true, name: true, score: true }, order: { score: "DESC" }, take: 10 })
+        const users = await this.userRepository.find({ select: { id: true, name: true, score: true }, order: { score: "DESC" }, take: 10})
         return users
     }
 
