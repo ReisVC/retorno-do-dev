@@ -71,6 +71,151 @@ export class SeedInitialQuestion1690000000000 implements MigrationInterface {
           { answer: "Monte Fogo", correct: false },
         ],
       },
+      {
+        question: "Quem é o Rei de Rohan durante a Guerra do Anel?",
+        answers: [
+          { answer: "Théoden", correct: true },
+          { answer: "Denethor", correct: false },
+          { answer: "Boromir", correct: false },
+          { answer: "Faramir", correct: false },
+        ],
+      },
+      {
+        question: "Qual é o nome da torre onde Saruman reside?",
+        answers: [
+          { answer: "Orthanc", correct: true },
+          { answer: "Barad-dûr", correct: false },
+          { answer: "Minas Tirith", correct: false },
+          { answer: "Dol Guldur", correct: false },
+        ],
+      },
+      {
+        question: "Quem salva Frodo dos Espectros do Anel no Vau de Bruinen?",
+        answers: [
+          { answer: "Gandalf", correct: false },
+          { answer: "Arwen", correct: true },
+          { answer: "Éowyn", correct: false },
+          { answer: "Galadriel", correct: false },
+        ],
+      },
+      {
+        question: "Qual o nome da criatura que ataca Gandalf em Moria?",
+        answers: [
+          { answer: "Troll", correct: false },
+          { answer: "Balrog", correct: true },
+          { answer: "Orc", correct: false },
+          { answer: "Uruk-hai", correct: false },
+        ],
+      },
+      {
+        question: "Qual dos seguintes NÃO é um hobbit?",
+        answers: [
+          { answer: "Sam", correct: false },
+          { answer: "Frodo", correct: false },
+          { answer: "Merry", correct: false },
+          { answer: "Gimli", correct: true },
+        ],
+      },
+      {
+        question: "Quem destrói o Um Anel, mesmo que indiretamente?",
+        answers: [
+          { answer: "Frodo", correct: false },
+          { answer: "Gollum", correct: true },
+          { answer: "Sam", correct: false },
+          { answer: "Aragorn", correct: false },
+        ],
+      },
+      {
+        question: "Qual o nome da cidade élfica onde Frodo se recupera após ser ferido?",
+        answers: [
+          { answer: "Valfenda", correct: true },
+          { answer: "Lothlórien", correct: false },
+          { answer: "Minas Tirith", correct: false },
+          { answer: "Edoras", correct: false },
+        ],
+      },
+      {
+        question: "Quem é o pai de Boromir e Faramir?",
+        answers: [
+          { answer: "Théoden", correct: false },
+          { answer: "Elrond", correct: false },
+          { answer: "Denethor", correct: true },
+          { answer: "Isildur", correct: false },
+        ],
+      },
+      {
+        question: "Que ser mágico ajuda Gandalf na batalha nos Campos de Pelennor?",
+        answers: [
+          { answer: "Árvore", correct: false },
+          { answer: "Águia Gigante", correct: true },
+          { answer: "Balrog", correct: false },
+          { answer: "Warg", correct: false },
+        ],
+      },
+      {
+        question: "Quem é a Dama de Lothlórien?",
+        answers: [
+          { answer: "Éowyn", correct: false },
+          { answer: "Arwen", correct: false },
+          { answer: "Galadriel", correct: true },
+          { answer: "Shelob", correct: false },
+        ],
+      },
+      {
+        question: "O que é Sting?",
+        answers: [
+          { answer: "Um cajado", correct: false },
+          { answer: "Uma espada élfica", correct: false },
+          { answer: "Uma adaga élfica", correct: true },
+          { answer: "Um arco", correct: false },
+        ],
+      },
+      {
+        question: "Qual o nome do reino dos anões visitado em 'O Hobbit'?",
+        answers: [
+          { answer: "Erebor", correct: true },
+          { answer: "Gondor", correct: false },
+          { answer: "Moria", correct: false },
+          { answer: "Rohan", correct: false },
+        ],
+      },
+      {
+        question: "Quem mata o Rei Bruxo de Angmar?",
+        answers: [
+          { answer: "Gandalf", correct: false },
+          { answer: "Aragorn", correct: false },
+          { answer: "Éowyn", correct: true },
+          { answer: "Boromir", correct: false },
+        ],
+      },
+      {
+        question: "Qual o nome do elfo que é parte da Sociedade do Anel?",
+        answers: [
+          { answer: "Thranduil", correct: false },
+          { answer: "Elrond", correct: false },
+          { answer: "Legolas", correct: true },
+          { answer: "Celeborn", correct: false },
+        ],
+      },
+      {
+        question: "Qual criatura tenta devorar Frodo e Sam perto de Cirith Ungol?",
+        answers: [
+          { answer: "Balrog", correct: false },
+          { answer: "Gollum", correct: false },
+          { answer: "Shelob", correct: true },
+          { answer: "Nazgûl", correct: false },
+        ],
+      },
+      {
+        question: "Qual o nome do pai de Aragorn?",
+        answers: [
+          { answer: "Isildur", correct: false },
+          { answer: "Elendil", correct: false },
+          { answer: "Arathorn", correct: true },
+          { answer: "Denethor", correct: false },
+        ],
+      }
+
     ];
 
     for (const q of questions) {
@@ -108,61 +253,61 @@ export class SeedInitialQuestion1690000000000 implements MigrationInterface {
         name: "Diogo",
         email: "diogo@gmail.com",
         password: "@Vitor123",
-        score: 5000,
+        score: 4000,
       },
       {
         name: "Lia",
         email: "lia@gmail.com",
         password: "@Vitor123",
-        score: 4600,
+        score: 2120,
       },
       {
         name: "Rafa",
         email: "rafa@gmail.com",
         password: "@Vitor123",
-        score: 4200,
+        score: 1500,
       },
       {
-        name: "João",
+        name: "Noah",
         email: "joao@gmail.com",
         password: "@Vitor123",
-        score: 4100,
+        score: 1200,
       },
       {
         name: "Bia",
         email: "bia@gmail.com",
         password: "@Vitor123",
-        score: 4000,
+        score: 1000,
       },
       {
         name: "Caio",
         email: "caio@gmail.com",
         password: "@Vitor123",
-        score: 3890,
+        score: 800,
       },
       {
         name: "Nina",
         email: "nina@gmail.com",
         password: "@Vitor123",
-        score: 3200,
+        score: 670,
       },
       {
-        name: "Leo",
-        email: "leo@gmail.com",
+        name: "Jorge",
+        email: "jorge@gmail.com",
         password: "@Vitor123",
-        score: 3000,
+        score: 400,
       },
       {
         name: "Tati",
         email: "tati@gmail.com",
         password: "@Vitor123",
-        score: 2900,
+        score: 200,
       },
       {
         name: "Igor",
         email: "igor@gmail.com",
         password: "@Vitor123",
-        score: 2700,
+        score: 100,
       },
     ];
 
