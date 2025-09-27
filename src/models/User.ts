@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, BeforeUpdate, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm'
 import bcrypt from 'bcrypt'
 import { Achievement } from './Achievement'
+import { Round } from './Round'
 
 @Entity('users')
 export class User {
@@ -24,6 +25,9 @@ export class User {
 
     @Column({ type: 'int', default: 0 })
     score: number;
+
+    @OneToMany(() => Round, (round) => round.user)
+    rounds: Round[];
 
     @OneToMany(() => Achievement, (achievement) => achievement.user)
     achievements: Achievement[];

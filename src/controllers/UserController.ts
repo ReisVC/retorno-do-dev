@@ -104,6 +104,28 @@ export class UserController {
         }
     }
 
+    async scoreZero(req: Request, res: Response) {
+        try {
+            // Chama o serviço para alterar a pontuação do usuário, passando o ID do usuário autenticado e o corpo da requisição
+            const user = await service.changeScoreForZero((req as any).user.id);
+            return res.json(user);
+        } catch (e: any) {
+            res.status(400).json({ message: e.message })
+        }
+    }
+
+    async createRound(req: Request, res: Response) {
+        try {
+            // Chama o serviço para alterar a pontuação do usuário, passando o ID do usuário autenticado e o corpo da requisição
+            const user = await service.setScoreRound((req as any).user.id, req.body);
+            return res.json(user);
+        } catch (e: any) {
+            res.status(400).json({ message: e.message })
+        }
+    }
+
+    
+
 }
 
 
